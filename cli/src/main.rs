@@ -8,8 +8,8 @@ use std::{
 use thousands::Separable;
 
 use clap::{Parser, ValueEnum};
-use seqc::{Dialect, Pattern, VariableDialect, VariablePattern};
 use memmap2::MmapMut;
+use seqc::{Dialect, Pattern, VariableDialect, VariablePattern};
 
 mod elog;
 

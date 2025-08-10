@@ -37,7 +37,7 @@
 //!
 //! ```
 //! use seqc::{Dialect, Pattern, VariablePattern};
-//! 
+//!
 //! let dialect: Dialect<2> = Dialect::new([
 //!     VariablePattern::Ternary(Pattern::from([b'a', b'b', b'c'])),
 //!     VariablePattern::Quaternary(Pattern::from([b'x', b'y', b'z', b'w'])),
