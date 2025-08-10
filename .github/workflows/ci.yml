@@ -30,7 +30,7 @@ jobs:
         toolchain: ${{ matrix.rust }}
 
     - name: Run cargo check
-      run: cargo check --verbose --locked
+      run: cargo check --verbose
 
     - name: Run cargo test
       run: cargo test --all-features
@@ -42,8 +42,8 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Install stable toolchain
-      uses: dtolnay/rust-toolchain@stable
+    - name: Install nightly toolchain
+      uses: dtolnay/rust-toolchain@nightly
       with:
         components: rustfmt
 
@@ -57,8 +57,8 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Install stable toolchain
-      uses: dtolnay/rust-toolchain@stable
+    - name: Install nightly toolchain
+      uses: dtolnay/rust-toolchain@nightly
       with:
         components: clippy
 
@@ -72,8 +72,8 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Install stable toolchain
-      uses: dtolnay/rust-toolchain@stable
+    - name: Install nightly toolchain
+      uses: dtolnay/rust-toolchain@nightly
 
     - name: Check documentation
       run: cargo doc --no-deps --all-features
