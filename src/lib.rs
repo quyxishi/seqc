@@ -36,6 +36,8 @@
 //! patterns and apply it to your data:
 //!
 //! ```
+//! use seqc::{Dialect, Pattern, VariablePattern};
+//! 
 //! let dialect: Dialect<2> = Dialect::new([
 //!     VariablePattern::Ternary(Pattern::from([b'a', b'b', b'c'])),
 //!     VariablePattern::Quaternary(Pattern::from([b'x', b'y', b'z', b'w'])),
@@ -54,7 +56,7 @@
 //! For `no_std` usage, pre-allocate buffers based on measured capacity:
 //!
 //! ```
-//! use seq::{Dialect, Pattern, VariablePattern};
+//! use seqc::{Dialect, Pattern, VariablePattern};
 //!
 //! const DIALECT: Dialect<1> = Dialect::new([
 //!     VariablePattern::Binary(Pattern::from([b'0', b'1'])),
