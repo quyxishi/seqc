@@ -1,0 +1,17 @@
+
+[package]
+name = "seqc-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+seqc = { path = "..", features = ["std"]}
+log = { version = "0.4.27", features = ["std"] }
+colored = "3.0.0"
+clap = { version = "4.5.42", features = ["derive"] }
+memmap2 = "0.9.7"
+thousands = "0.2.0"
+
+[[bin]]
+name = "seqc"
+path = "src/main.rs"
