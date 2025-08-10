@@ -1,3 +1,4 @@
+#![allow(clippy::precedence, clippy::while_let_on_iterator)]
 #![feature(iter_array_chunks)]
 #![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(feature = "from_bytes", feature(slice_as_array))]

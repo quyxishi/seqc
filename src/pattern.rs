@@ -21,6 +21,12 @@ impl PatternWord {
     }
 }
 
+impl Default for PatternWord {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AsRef<str> for PatternWord {
     fn as_ref(&self) -> &str {
         str::from_utf8(&self.buffer[..self.length])
@@ -98,6 +104,11 @@ impl<const N: usize> Pattern<N> {
     }
 
     /// Construct a new `Pattern` from a fixed-size array, without checking.
+    ///
+    /// # Safety
+    ///
+    /// - The length of `chunks` must be in the range \[2, 6]
+    /// - Elements of `chunks` must be distinct.
     pub const unsafe fn from_unchecked(chunks: [u8; N]) -> Self {
         Self {
             chunks,
@@ -253,6 +264,7 @@ impl<const N: usize> Pattern<N> {
     }
 
     #[inline(always)]
+    #[allow(clippy::needless_range_loop)]
     fn decode_uneven_distribution(&self, chunk_count: &[u8; N]) -> u8 {
         let mut bits: u8 = 0u8;
         let dbits_count: usize = 6 % N;

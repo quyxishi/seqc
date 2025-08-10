@@ -493,9 +493,11 @@ macro_rules! impl_variable_dialect {
     };
 }
 
+// todo! think about ambiguous size fix due `lookup_table`
 impl_variable_dialect! {
     /// Represents a dialect with a variable number of patterns.
     #[cfg_attr(feature = "std", derive(Debug))]
+    #[allow(clippy::large_enum_variant)]
     pub enum VariableDialect {
         /// Dialect with 1 pattern.
         Unary(Dialect<1>),
