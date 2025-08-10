@@ -16,6 +16,8 @@ Next, to use pattern-based encoding, create a dialect with desired
 patterns and apply it to your data:
 
 ```rust
+use seqc::{Dialect, Pattern, VariablePattern};
+
 let dialect: Dialect<2> = Dialect::new([
     VariablePattern::Ternary(Pattern::from([b'a', b'b', b'c'])),
     VariablePattern::Quaternary(Pattern::from([b'x', b'y', b'z', b'w'])),
