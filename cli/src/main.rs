@@ -75,7 +75,7 @@ fn main() {
     }
 
     info!(
-        "{}-cli v{}",
+        "{} v{}",
         env!("CARGO_PKG_NAME"),
         env!("CARGO_PKG_VERSION")
     );
